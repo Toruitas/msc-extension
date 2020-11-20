@@ -55,7 +55,8 @@ if (location.href.includes("old.reddit.com/r/news/")){
         titlesText.push(titleText);
     })
 
-    fetchResource('http://127.0.0.1:8000/bulk-predict',{
+    // fetchResource('http://192.168.1.214:80/bulk-predict',{
+    fetchResource('localhost:8000/bulk-predict',{
         method: 'post',
         body: JSON.stringify(titlesText),
         headers:{
@@ -67,16 +68,11 @@ if (location.href.includes("old.reddit.com/r/news/")){
         // for each object
         data.forEach(titleObj=>{
             if (res[titleObj.textContent]=="True"){
-                titleObj.classList.add('divisive');
+                titleObj.classList.add('controversial');
             }
         })
     })
-    
-}
-
-if (location.href.includes("reddit.com/r/news/") && !location.href.includes("old")){
-    // TODO: direct user to old.reddit.com/r/news
-    // let data = getTitles();  // list of links
-
-
+}else{
+    // redirect to old.reddit.com/r/news/
+    window.location = "https://old.reddit.com/r/news/";
 }

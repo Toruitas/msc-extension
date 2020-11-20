@@ -8,7 +8,8 @@
         "32":"./icons/favicon-32x32.png"
     },
     "browser_action": {
-     "default_icon": "./icons/favicon-32x32.png"
+     "default_icon": "./icons/favicon-32x32.png",
+     "default_popip": "popup.html"
     },
 
     "background": {
@@ -20,5 +21,9 @@
         "matches": ["https://reddit.com/r/news/","https://www.reddit.com/r/news/","https://old.reddit.com/r/news/","https://old.reddit.com/r/news/?count=*"],
         "js": ["content.js"],
         "css": ["content.css"]
-    }]
+    }],
+    "permissions":[
+        "tabs",
+        "storage"
+    ]
 }
