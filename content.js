@@ -56,7 +56,7 @@ if (location.href.includes("old.reddit.com/r/news/")){
     })
 
     // fetchResource('http://192.168.1.214:80/bulk-predict',{
-    fetchResource('localhost:8000/bulk-predict',{
+    fetchResource('localhost:5000/bulk-predict',{
         method: 'post',
         body: JSON.stringify(titlesText),
         headers:{
