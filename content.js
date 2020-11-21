@@ -22,7 +22,7 @@ function addStyling(dataObj){
 
     predictionStyle ="";
     if (details.prediction){
-        predictionStyle += "<div style='color:orange';>Controversial topic.</div>"
+        predictionStyle += "<span style='color:orange';>Controversial topic.</span>"
     }
 
     // document.getElementsByClassName('jobsearch-JobInfoHeader-title')[0].innerHTML += predictionDetails;
@@ -69,6 +69,7 @@ if (location.href.includes("old.reddit.com/r/news/")){
         data.forEach(titleObj=>{
             if (res[titleObj.textContent]=="True"){
                 titleObj.classList.add('controversial');
+                titleObj.textContent+= " (maybe controversial)";
             }
         })
     })
